@@ -1,9 +1,9 @@
 import "./App.css";
-import Dropdown from "./components/Dropdown.jsx";
+import Navbar from "./components/Common/Navbar.jsx";
 function App() {
   return (
-    <div className="">
-      <Dropdown />
+    <div className="bg-[#DCFCE7] min-h-screen max-w-[394px] mx-auto px-4">
+      <Navbar />
     </div>
   );
 }
