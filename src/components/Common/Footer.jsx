@@ -5,7 +5,7 @@ const Footer = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     return (
         <div className="max-w-[394px] mx-auto px-4">
-            <div className='flex w-full justify-center bg-[#F0FDF4] my-2'>
+            <div className='flex w-full justify-center bg-[#F0FDF4] py-2'>
                 {footerData.map((data, index) => (
                     <div
                         key={index}
