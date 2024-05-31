@@ -22,6 +22,5 @@ export const ThreeLnes = () => {
             <rect x="9" y="15" width="15" height="2" rx="1" fill="#052E16" />
             <rect x="13" y="19" width="11" height="2" rx="1" fill="#052E16" />
         </svg>
-
     )
 }
