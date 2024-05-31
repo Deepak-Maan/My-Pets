@@ -24,24 +24,26 @@ const All = () => {
                     Leaderboard
                 </button>
             </div>
-            <div className='mt-4 h-[634px] overflow-y-scroll overflow_y'>
+            <div className='mt-4'>
                 {activeTab === 'all' && (
-                    data.map((item) => (
-                        <div key={item.id} className='bg-[#F0FDF4] rounded-[4px] p-2 flex items-center justify-between mb-2'>
-                            <div className='flex items-center gap-2'>
-                                <img src={item.img} alt="fishgreen" />
-                                <div>
-                                    <p className='font-normal leading-[19.36px] text-base text-[#0C0A09]'>16982
-                                        <span className='text-[#44403C]'> attacked</span>
-                                        <span className='text-[#0C0A09]'> Retardio</span></p>
-                                    <p className='font-normal leading-[19.36px] text-base text-[#0C0A09]'>
-                                        and <span className={`font-bold ${item.loss.includes('won') ? 'text-[#166534]' : 'text-[#651616]'}`}>{item.loss}</span>
-                                    </p>
+                    <div className='h-[634px] overflow-y-scroll overflow_y'>
+                        {data.map((item) => (
+                            <div key={item.id} className='bg-[#F0FDF4] rounded-[4px] p-2 max-h-[50px] flex items-center justify-between mb-1'>
+                                <div className='flex items-center gap-2'>
+                                    <img src={item.img} alt="fishgreen" />
+                                    <div>
+                                        <p className='font-normal leading-[19.36px] text-base text-[#0C0A09]'>16982
+                                            <span className='text-[#44403C]'> attacked</span>
+                                            <span className='text-[#0C0A09]'> Retardio</span></p>
+                                        <p className='font-normal leading-[19.36px] text-base text-[#0C0A09]'>
+                                            and <span className={`font-bold ${item.loss.includes('won') ? 'text-[#166534]' : 'text-[#651616]'}`}>{item.loss}</span>
+                                        </p>
+                                    </div>
                                 </div>
+                                <p className='font-normal text-xs leading-[14.52px] tracking-[1%] text-[#44403C]'>{item.timeAgo}</p>
                             </div>
-                            <p className='font-normal text-xs leading-[14.52px] tracking-[1%] text-[#44403C]'>{item.timeAgo}</p>
-                        </div>
-                    ))
+                        ))}
+                    </div>
                 )}
                 {activeTab === 'leaderboard' && (
                     <>
@@ -80,27 +82,29 @@ const All = () => {
                                 <p className='font-normal text-xs leading-[14.52px] text-[#052E16] tracking-[1%]'>My pets</p>
                             </div>
                         </div>
-                        
-                        {leaderboardData.map((items) => (
-                            <div key={items.id} className='bg-[#F0FDF4] rounded-[4px] p-2 flex items-center justify-between mb-2'>
-                                <div className='flex items-center gap-2'>
-                                    <div className='rounded-[4px] bg-[#DCFCE7] p-[7.5px_14px] font-bold text-base leading-[19.36px] text-[#0C0A09]'>
-                                        #1
+
+                        <div className='h-[536px] overflow-y-scroll overflow_y'>
+                            {leaderboardData.map((items) => (
+                                <div key={items.id} className='bg-[#F0FDF4] rounded-[4px] p-2 flex items-center justify-between mb-1 max-h-[50px]'>
+                                    <div className='flex items-center gap-2'>
+                                        <div className='rounded-[4px] bg-[#DCFCE7] p-[7.5px_14px] font-bold text-base leading-[19.36px] text-[#0C0A09]'>
+                                            #1
+                                        </div>
+                                        <div>
+                                            <p className='font-normal leading-[19.36px] text-base text-[#44403C]'>Based.eth
+                                                <span className='text-[#D6D3D1] text-xs leading-[14.52px] tracking-[1%]'> id:  73</span></p>
+                                            <p className='font-bold leading-[19.36px] text-base text-[#166534]'>1295059.36
+                                                <span className="text-xs leading-[14.52px] font-normal tracking-[1%]"> pts</span>
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p className='font-normal leading-[19.36px] text-base text-[#44403C]'>Based.eth
-                                            <span className='text-[#D6D3D1] text-xs leading-[14.52px] tracking-[1%]'> id:  73</span></p>
-                                        <p className='font-bold leading-[19.36px] text-base text-[#166534]'>1295059.36
-                                            <span className="text-xs leading-[14.52px] font-normal tracking-[1%]"> pts</span>
-                                        </p>
-                                    </div>
+                                    <button className={` border rounded-[6px] max-w-[100px] w-full shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] duration-300  flex items-center justify-between  border-solid p-[9.5px_16px]  border-[#052E16] ${items.opacity} ${items.cursor}`}>
+                                        <img src={items.img} alt="shield" />
+                                        <span className='font-normal text-xs leading-[14.52px] tracking-[1%] text-black'>{items.text}</span>
+                                    </button>
                                 </div>
-                                <button className={` border rounded-[6px] max-w-[100px] w-full shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] duration-300  flex items-center justify-between  border-solid p-[9.5px_16px]  border-[#052E16] ${items.opacity} ${items.cursor}`}>
-                                    <img src={items.img} alt="shield" />
-                                    <span className='font-normal text-xs leading-[14.52px] tracking-[1%] text-black'>{items.text}</span>
-                                </button>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </>
                 )}
             </div>
