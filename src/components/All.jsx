@@ -1,5 +1,4 @@
 import React from 'react'
-import FishGreen from "../assets/images/svg/FishGreen.svg";
 const All = () => {
     return (
         <div className=' max-w-[394px] mx-auto px-4 pt-[22px]'>
