@@ -27,7 +27,7 @@ const Dropdown = () => {
                 </svg>
             </button>
             {isOpen && (
-                <div className="origin-top-right absolute right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <div className="origin-top-right absolute z-10 right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                         {Colors.map((color) => (
                             <button key={color.code} onClick={() => { setSelectedColor(color.code); setIsOpen(false); }} className="flex items-center px-4 py-2 w-full text-base font-normal text-[#052E16]" role="menuitem" >{color.code} </button>
