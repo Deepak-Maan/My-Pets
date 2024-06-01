@@ -142,7 +142,8 @@ export const leaderboardData = [
         id: 3,
         img: Time,
         text: "23m 15s",
-        opacity: 'opacity-[.5]'
+        opacity: 'opacity-[.5]',
+        cursor: 'cursor-not-allowed'
 
     },
     {
@@ -185,7 +186,8 @@ export const leaderboardData = [
         id: 10,
         img: Time,
         text: "23m 15s",
-        opacity: 'opacity-[.5]'
+        opacity: 'opacity-[.5]',
+        cursor: 'cursor-not-allowed'
     },
     {
         id: 11,
