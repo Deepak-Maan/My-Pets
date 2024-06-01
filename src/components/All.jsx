@@ -22,7 +22,7 @@ const All = () => {
     const renderAllContent = () => (
         <div className='h-[467px] overflow-y-scroll overflow_y'>
             {data.map((item) => (
-                <div key={item.id} className='bg-[#F0FDF4] rounded-[4px] p-2 max-h-[50px] flex items-center justify-between mb-1'>
+                <div key={item.id} className={`bg-[#F0FDF4] rounded-[4px] p-2 max-h-[50px] flex items-center justify-between mb-1 ${item.loss.includes('won') ? '' : 'border border-[#F0F6EF]'} `}>
                     <div className='flex items-center gap-2'>
                         <img src={item.img} alt="fishgreen" />
                         <div>
