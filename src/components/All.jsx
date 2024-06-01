@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { data, leaderboardData } from './Common/Helper';
-import { Light, Light1 } from './Common/Icons';
+import Cartoon from "../assets/svg/Cartoon.svg";
+import Sheild2 from "../assets/svg/Sheild2.svg";
+import Bulb from "../assets/svg/Bulb.svg";
+import Heart from "../assets/svg/Heart.svg";
 
 const All = () => {
     const [activeTab, setActiveTab] = useState('all');
@@ -8,16 +11,37 @@ const All = () => {
     const [toggle2, setToggle2] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState(null);
+    const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
 
-    const openModal = (content) => {
-        setModalContent(content);
-        setIsModalOpen(true);
+    const openModal = (content, cursor) => {
+        if (cursor === 'cursor-not-allowed') {
+            return false; 
+        } else if (cursor === '3' || cursor === '9') {
+            return false; 
+        } else {
+            setModalContent(content);
+            setIsModalOpen(true);
+            return true; 
+        }
     };
 
     const closeModal = () => {
         setIsModalOpen(false);
         setModalContent(null);
+        setIsSecondModalOpen(true);
     };
+
+    const closeSecondModal = () => {
+        setIsSecondModalOpen(false);
+    };
+
+    useEffect(() => {
+        if (isModalOpen || isSecondModalOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [isModalOpen, isSecondModalOpen]);
 
     return (
         <div className='max-w-[361px] bg-[#DCFCE7] mx-auto pt-[22px] relative'>
@@ -111,7 +135,7 @@ const All = () => {
                                             </p>
                                         </div>
                                     </div>
-                                    <button onClick={() => openModal('Bonk Button Content')} className={` border rounded-[6px] max-w-[100px] w-full shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] duration-300  flex items-center justify-between  border-solid p-[9.5px_16px]  border-[#052E16] ${items.opacity} ${items.cursor}`}>
+                                    <button onClick={() => openModal('Bonk Button Content', items.cursor)} className={` border rounded-[6px] max-w-[100px] w-full shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] duration-300  flex items-center justify-between  border-solid p-[9.5px_16px]  border-[#052E16] ${items.opacity} ${items.cursor}`}>
                                         <img src={items.img} alt="shield" />
                                         <span className='font-normal text-xs leading-[14.52px] tracking-[1%] text-black'>{items.text}</span>
                                     </button>
@@ -123,12 +147,44 @@ const All = () => {
             </div>
 
             {isModalOpen && (
-                <div className='fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50'>
-                    <div className='bg-[#DCFCE7] rounded-[16px] p-4 max-w-[361px] mx-auto overflow-hidden'>
+                <div className='fixed inset-0 backdrop-blur-[17.7px] flex items-center justify-center z-50 left-0 top-0'>
+                    <div className='bg-[#DCFCE7] rounded-[16px] p-2 max-w-[361px] w-full mx-auto overflow-hidden'>
                         <div className='max-w-[344px] rounded-lg p-4 bg-[#F0FDF4]'>
-                            {/* <Light1 /> */}
+                            <div className=' flex items-center gap-2 mb-4'>
+                                <img src={Cartoon} alt="cartoon" />
+                                <span className=' font-bold text-base leading-5 text-[#052E16]'>Asphyxiated</span>
+                                <span className=' font-normal text-xs leading-[14.52px] tracking-[1%] p-[2px_6px] bg-[#DCFCE7] text-[#342E2E]'>id: 679</span>
+                            </div>
+                            <div className=' flex flex-col gap-2'>
+                                <div className=' flex items-center gap-2'>
+                                    <img src={Sheild2} alt="sheild2" />
+                                    <span className=' font-normal text-base leading-5 text-[#342E2E]'>11</span>
+                                </div>
+                                <div className=' flex items-center gap-2'>
+                                    <img src={Bulb} alt="sheild2" />
+                                    <span className=' font-normal text-base leading-5 text-[#342E2E]'>10</span>
+                                </div>
+                                <div className=' flex items-center gap-2'>
+                                    <img src={Heart} alt="sheild2" />
+                                    <span className=' font-normal text-base leading-5 text-[#342E2E]'>2d 2h 24m 30s</span>
+                                </div>
+                            </div>
                         </div>
-                        <button onClick={closeModal} className='mt-4 bg-[#166534] text-white p-2 rounded'>Close</button>
+                        <button onClick={closeModal} className='mt-1 p-2 rounded-[8px] w-full flex items-center justify-center py-[10.5px] font-bold text-[22px] leading-[26.63px] tracking-[1%] text-[#F0FDF4] bg-[#166534] after:absolute duration-300 after:bg-white after:h-[50px] after:right-[-100%] after:w-[800px] after:bottom-[-100%] after:rounded-full hover:text-[#166534] hover:border-[#166534] border-[2px] border-transparent overflow-hidden relative hover:after:opacity-100 after:opacity-0 after:duration-300 hover:after:right-[-20%] hover:after:bottom-0'><span className=' relative z-[1]'>Ok</span></button>
+                    </div>
+                </div>
+            )}
+
+            {isSecondModalOpen && (
+                <div className='fixed inset-0 backdrop-blur-[17.7px] flex items-center justify-center z-50'>
+                    <div className='bg-[#DCFCE7] rounded-[16px] p-2 max-w-[361px] w-full mx-auto overflow-hidden'>
+                        <div className='max-w-[344px] rounded-lg p-4 bg-[#F0FDF4]'>
+                            <p className=' font-bold text-base leading-5 text-[#052E16]'>Rules</p>
+                            <p className=' mt-4 text-base font-normal leading-5 text-black'>You can attack a pet above your level every 30mins and earn 0.5% of their rewards.
+                        <span className=' block'>  A pet can only be attacked once per hour.</span></p>
+                        </div>
+                        <button onClick={closeSecondModal} className='mt-1 p-2 rounded-[8px] w-full flex items-center justify-center py-[10.5px] font-bold text-[22px] leading-[26.63px] tracking-[1%] text-[#F0FDF4] bg-[#166534] after:absolute duration-300 after:bg-white after:h-[50px] after:right-[-100%] after:w-[800px] after:bottom-[-100%] after:rounded-full hover:text-[#166534] hover:border-[#166534] border-[2px] border-transparent overflow-hidden relative hover:after:opacity-100 after:opacity-0 after:duration-300 hover:after:right-[-20%] hover:after:bottom-0'>
+                            <span className=' relative z-[1]'>Ok</span></button>
                     </div>
                 </div>
             )}
