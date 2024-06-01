@@ -1,13 +1,26 @@
 import React, { useState } from 'react';
 import { data, leaderboardData } from './Common/Helper';
+import { Light, Light1 } from './Common/Icons';
 
 const All = () => {
     const [activeTab, setActiveTab] = useState('all');
     const [toggle1, setToggle1] = useState(true);
     const [toggle2, setToggle2] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalContent, setModalContent] = useState(null);
+
+    const openModal = (content) => {
+        setModalContent(content);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setModalContent(null);
+    };
 
     return (
-        <div className='max-w-[361px] bg-[#DCFCE7] mx-auto pt-[22px]'>
+        <div className='max-w-[361px] bg-[#DCFCE7] mx-auto pt-[22px] relative'>
             <div className='flex items-center gap-2 justify-center'>
                 <button
                     onClick={() => setActiveTab('all')}
@@ -98,7 +111,7 @@ const All = () => {
                                             </p>
                                         </div>
                                     </div>
-                                    <button className={` border rounded-[6px] max-w-[100px] w-full shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] duration-300  flex items-center justify-between  border-solid p-[9.5px_16px]  border-[#052E16] ${items.opacity} ${items.cursor}`}>
+                                    <button onClick={() => openModal('Bonk Button Content')} className={` border rounded-[6px] max-w-[100px] w-full shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] duration-300  flex items-center justify-between  border-solid p-[9.5px_16px]  border-[#052E16] ${items.opacity} ${items.cursor}`}>
                                         <img src={items.img} alt="shield" />
                                         <span className='font-normal text-xs leading-[14.52px] tracking-[1%] text-black'>{items.text}</span>
                                     </button>
@@ -108,8 +121,19 @@ const All = () => {
                     </>
                 )}
             </div>
+
+            {isModalOpen && (
+                <div className='fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50'>
+                    <div className='bg-[#DCFCE7] rounded-[16px] p-4 max-w-[361px] mx-auto overflow-hidden'>
+                        <div className='max-w-[344px] rounded-lg p-4 bg-[#F0FDF4]'>
+                            {/* <Light1 /> */}
+                        </div>
+                        <button onClick={closeModal} className='mt-4 bg-[#166534] text-white p-2 rounded'>Close</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
-}
+};
 
 export default All;
