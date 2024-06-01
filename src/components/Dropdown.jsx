@@ -8,7 +8,7 @@ const Dropdown = () => {
 
     return (
         <div className="relative inline-block text-left">
-            <button onClick={() => setIsOpen(!isOpen)} className="inline-flex justify-between items-center rounded-md border border-[#E4F3E9] shadow-sm px-[6px] py-[7.5px] bg-[#F0FDF4] text-sm font-medium h-[27px] w-[100px] text-gray-700 focus:outline-none ">
+            <button onClick={() => setIsOpen(!isOpen)} className="inline-flex justify-between items-center rounded-[4px] border border-[#E4F3E9] px-[6px] py-[7.5px] bg-[#F0FDF4] text-sm font-medium h-[27px] w-[100px] text-gray-700 focus:outline-none ">
                 <div className="pr-2">
                     <PetLogo />
                 </div>
