@@ -14,9 +14,9 @@ import Time from "../../assets/svg/time.svg";
 // navData
 export const Colors = [
     { code: '#36985', label: 'Color 1' },
-    { code: '#FF5733', label: 'Color 2' },
-    { code: '#33FF57', label: 'Color 3' },
-    { code: '#3357FF', label: 'Color 4' }
+    { code: '#FF573', label: 'Color 2' },
+    { code: '#33FF5', label: 'Color 3' },
+    { code: '#3357F', label: 'Color 4' }
 ];
 
 // footer data
