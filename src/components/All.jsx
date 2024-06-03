@@ -45,7 +45,7 @@ const All = () => {
     }, [activeTab]);
 
     const renderAllContent = () => (
-        <div className='h-[467px] overflow-y-scroll overflow_y'>
+        <div className='h-[526px] sm:h-[467px] overflow-y-scroll overflow_y'>
             {data.map((item) => (
                 <div key={item.id} className={`bg-[#F0FDF4] rounded-[4px] p-2 max-h-[50px] flex items-center justify-between mb-1 ${item.loss.includes('won') ? '' : 'border border-[#F0F6EF]'} `}>
                     <div className='flex items-center gap-2'>
@@ -184,7 +184,7 @@ const All = () => {
             )}
 
             {isSecondModalOpen && (
-                <div className='fixed inset-0 bg-[#9ED2AECC] max-w-[393px] mx-auto backdrop-blur-[10px] flex items-center justify-center z-50'>
+                <div onClick={closeSecondModal} className='fixed inset-0 bg-[#9ED2AECC] max-w-[393px] mx-auto backdrop-blur-[10px] flex items-center justify-center z-50'>
                     <div className='bg-[#DCFCE7] rounded-[16px] p-2 max-w-[361px] w-full mx-auto overflow-hidden'>
                         <div className='max-w-[344px] rounded-lg p-4 bg-[#F0FDF4]'>
                             <p className=' font-bold text-base leading-5 text-[#052E16]'>Rules</p>
