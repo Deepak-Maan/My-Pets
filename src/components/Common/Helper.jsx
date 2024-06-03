@@ -130,14 +130,14 @@ export const leaderboardData = [
         img: Shield,
         text: "Sheild",
         opacity: 'opacity-[1]',
-        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
+        shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
     },
     {
         id: 2,
         img: Bonk,
         text: "Bonk",
         opacity: 'opacity-[1]',
-        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
+        shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
 
     },
     {
@@ -154,42 +154,48 @@ export const leaderboardData = [
         img: Shield,
         text: "Sheild",
         opacity: 'opacity-[1]',
-        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
+                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
+
     },
     {
         id: 5,
         img: Shield,
         text: "Sheild",
         opacity: 'opacity-[1]',
-        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
+                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
+
     },
     {
         id: 6,
         img: Shield,
         text: "Sheild",
         opacity: 'opacity-[1]',
-        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
+                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
+
     },
     {
         id: 7,
         img: Bonk,
         text: "Bonk",
         opacity: 'opacity-[1]',
-        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
+                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
+
     },
     {
         id: 8,
         img: Bonk,
         text: "Bonk",
         opacity: 'opacity-[1]',
-        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
+                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
+
     },
     {
         id: 9,
         img: Bonk,
         text: "Bonk",
         opacity: 'opacity-[1]',
-        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
+                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
+
     },
     {
         id: 10,
@@ -203,6 +209,7 @@ export const leaderboardData = [
         img: Bonk,
         text: "Bonk",
         opacity: 'opacity-[1]',
-        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
+                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
+
     },
 ]

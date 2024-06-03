@@ -135,7 +135,7 @@ const All = () => {
                                             </p>
                                         </div>
                                     </div>
-                                    <button onClick={() => openModal('Bonk Button Content', items.cursor)} className={` border rounded-[6px] max-w-[100px] w-full hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] duration-300  flex items-center justify-between  border-solid p-[9.5px_16px]  border-[#052E16] ${items.shadow} ${items.opacity} ${items.cursor}`}>
+                                    <button onClick={() => openModal('Bonk Button Content', items.cursor)} className={` border rounded-[6px] max-w-[100px] w-full  duration-300  flex items-center justify-between  border-solid p-[9.5px_16px]  border-[#052E16] ${items.shadow} ${items.opacity} ${items.cursor}`}>
                                         <img src={items.img} alt="shield" />
                                         <span className='font-normal text-xs leading-[14.52px] tracking-[1%] text-black'>{items.text}</span>
                                     </button>
