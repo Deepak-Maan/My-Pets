@@ -118,7 +118,7 @@ const All = () => {
                             </div>
                         </div>
                         <button
-                            className={`border rounded-[6px] bg-[#DCFCE7] max-w-[100px] w-full shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] duration-300 flex items-center justify-between border-solid p-[9.5px_16px] border-[#052E16] ${items.opacity} ${items.cursor}`}
+                            className={`border rounded-[6px] bg-[#DCFCE7] max-w-[100px] w-full hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] duration-300 flex items-center justify-between border-solid p-[9.5px_16px] border-[#052E16] ${items.shadow} ${items.opacity} ${items.cursor}`}
                             onClick={() => openModal(items.content, items.cursor)}
                         >
                             <img src={items.img} alt="shield" />

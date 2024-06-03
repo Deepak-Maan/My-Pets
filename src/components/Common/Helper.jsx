@@ -129,13 +129,15 @@ export const leaderboardData = [
         id: 1,
         img: Shield,
         text: "Sheild",
-        opacity: 'opacity-[1]'
+        opacity: 'opacity-[1]',
+        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
     },
     {
         id: 2,
         img: Bonk,
         text: "Bonk",
-        opacity: 'opacity-[1]'
+        opacity: 'opacity-[1]',
+        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
 
     },
     {
@@ -143,44 +145,51 @@ export const leaderboardData = [
         img: Time,
         text: "23m 15s",
         opacity: 'opacity-[.5]',
-        cursor: 'cursor-not-allowed'
+        cursor: 'cursor-not-allowed',
+        shadow: 'unset'
 
     },
     {
         id: 4,
         img: Shield,
         text: "Sheild",
-        opacity: 'opacity-[1]'
+        opacity: 'opacity-[1]',
+        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
     },
     {
         id: 5,
         img: Shield,
         text: "Sheild",
-        opacity: 'opacity-[1]'
+        opacity: 'opacity-[1]',
+        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
     },
     {
         id: 6,
         img: Shield,
         text: "Sheild",
-        opacity: 'opacity-[1]'
+        opacity: 'opacity-[1]',
+        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
     },
     {
         id: 7,
         img: Bonk,
         text: "Bonk",
-        opacity: 'opacity-[1]'
+        opacity: 'opacity-[1]',
+        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
     },
     {
         id: 8,
         img: Bonk,
         text: "Bonk",
-        opacity: 'opacity-[1]'
+        opacity: 'opacity-[1]',
+        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
     },
     {
         id: 9,
         img: Bonk,
         text: "Bonk",
-        opacity: 'opacity-[1]'
+        opacity: 'opacity-[1]',
+        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
     },
     {
         id: 10,
@@ -193,6 +202,7 @@ export const leaderboardData = [
         id: 11,
         img: Bonk,
         text: "Bonk",
-        opacity: 'opacity-[1]'
+        opacity: 'opacity-[1]',
+        shadow: 'shadow-[1px_1px_0px_0px_#16653480]'
     },
 ]
