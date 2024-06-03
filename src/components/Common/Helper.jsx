@@ -168,7 +168,7 @@ export const leaderboardData = [
     {
         id: 6,
         img: Shield,
-        text: "Sheild",
+        text: "Bonk",
         opacity: 'opacity-[1]',
         shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
 
