@@ -13,17 +13,8 @@ const Dropdown = () => {
                     <PetLogo />
                 </div>
                 <span className="flex items-center  text-base font-normal text-[#052E16]">{selectedColor}</span>
-                <svg className={`-mr-1 h-5 w-5 transition-transform ${isOpen ? 'transform rotate-180' : ''}`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                >
-                    <path
-                        fillRule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                    />
+                <svg className={`-mr-1 h-5 w-5 transition-transform ${isOpen ? 'transform rotate-180' : ''}`} width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L3.5 4L6 1" stroke="#052E16" stroke-linecap="round" />
                 </svg>
             </button>
             {isOpen && (

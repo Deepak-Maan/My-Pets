@@ -181,7 +181,7 @@ const All = () => {
                                 </div>
                             </div>
                         </div>
-                        <button onClick={closeModal} className='mt-1 p-2 rounded-[8px] w-full flex items-center justify-center py-[10.5px] font-bold text-[22px] leading-[26.63px] tracking-[1%] text-[#F0FDF4] bg-[#166534] after:absolute duration-300 after:bg-white after:h-[50px] after:right-[-100%] after:w-[800px] after:bottom-[-100%] after:rounded-full hover:text-[#166534] hover:border-[#166534] border-[2px] border-transparent overflow-hidden relative hover:after:opacity-100 after:opacity-0 after:duration-300 hover:after:right-[-20%] hover:after:bottom-0'><span className=' relative z-[1]'>Ok</span></button>
+                        <button onClick={closeModal} className='mt-1 p-2 rounded-[8px] w-full max-h-[48px] flex items-center justify-center py-[10.5px] font-bold text-[22px] leading-[26.63px] tracking-[1%] text-[#F0FDF4] bg-[#166534] after:absolute duration-300 after:bg-white after:h-[50px] after:right-[-100%] after:w-[800px] after:bottom-[-100%] after:rounded-full hover:text-[#166534] hover:border-[#166534] border-[2px] border-transparent overflow-hidden relative hover:after:opacity-100 after:opacity-0 after:duration-300 hover:after:right-[-20%] hover:after:bottom-0'><span className=' relative z-[1]'>Ok</span></button>
                     </div>
                 </div>
             )}
@@ -194,7 +194,7 @@ const All = () => {
                             <p className=' mt-4 text-base font-normal leading-5 text-black'>You can attack a pet above your level every 30mins and earn 0.5% of their rewards.
                                 <span className=' block'>  A pet can only be attacked once per hour.</span></p>
                         </div>
-                        <button onClick={closeSecondModal} className='mt-1 p-2 rounded-[8px] w-full flex items-center justify-center py-[10.5px] font-bold text-[22px] leading-[26.63px] tracking-[1%] text-[#F0FDF4] bg-[#166534] after:absolute duration-300 after:bg-white after:h-[50px] after:right-[-100%] after:w-[800px] after:bottom-[-100%] after:rounded-full hover:text-[#166534] hover:border-[#166534] border-[2px] border-transparent overflow-hidden relative hover:after:opacity-100 after:opacity-0 after:duration-300 hover:after:right-[-20%] hover:after:bottom-0'>
+                        <button onClick={closeSecondModal} className='mt-1 p-2 rounded-[8px] w-full flex items-center justify-center py-[10.5px] font-bold text-[22px] leading-[26.63px] max-h-[48px] tracking-[1%] text-[#F0FDF4] bg-[#166534] after:absolute duration-300 after:bg-white after:h-[50px] after:right-[-100%] after:w-[800px] after:bottom-[-100%] after:rounded-full hover:text-[#166534] hover:border-[#166534] border-[2px] border-transparent overflow-hidden relative hover:after:opacity-100 after:opacity-0 after:duration-300 hover:after:right-[-20%] hover:after:bottom-0'>
                             <span className=' relative z-[1]'>Ok</span></button>
                     </div>
                 </div>
