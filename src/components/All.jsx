@@ -2,27 +2,60 @@ import React, { useState, useEffect } from 'react';
 import { data, leaderboardData } from './Common/Helper';
 import TimerIcon from '../assets/svg/time.svg';
 import BonkIcon from '../assets/svg/bonk.svg';
+import Cartoon from "../assets/svg/Cartoon.svg";
+
 
 const All = () => {
     const [activeTab, setActiveTab] = useState('all');
     const [toggle1, setToggle1] = useState(true);
     const [toggle2, setToggle2] = useState(false);
-    const [dataContent, setDataContent] = useState('');
     const [dataIcon, setDataIcon] = useState(TimerIcon);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalContent, setModalContent] = useState(null);
+    const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
 
     useEffect(() => {
         if (activeTab === 'all') {
-            ;
             setDataIcon(TimerIcon);
         } else if (activeTab === 'leaderboard') {
             setDataIcon(BonkIcon);
         }
     }, [activeTab]);
 
+    const openModal = (content, cursor) => {
+        if (cursor === 'cursor-not-allowed') {
+            return false;
+        } else if (cursor === '3' || cursor === '9') {
+            return false;
+        } else {
+            setModalContent(content);
+            setIsModalOpen(true);
+            return true;
+        }
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setModalContent(null);
+        setIsSecondModalOpen(true);
+    };
+
+    const closeSecondModal = () => {
+        setIsSecondModalOpen(false);
+    };
+
+    useEffect(() => {
+        if (isModalOpen || isSecondModalOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [isModalOpen, isSecondModalOpen]);
+
     const renderAllContent = () => (
         <div className='h-[467px] overflow-y-scroll overflow_y'>
             {data.map((item) => (
-                <div key={item.id} className={`bg-[#F0FDF4] rounded-[4px] p-2 max-h-[50px] flex items-center justify-between mb-1 ${item.loss.includes('won') ? '' : 'border border-[#F0F6EF]'} `}>
+                <div key={item.id} className={`bg-[#F0FDF4] rounded-[4px] p-2 max-h-[50px] flex items-center justify-between mb-1 ${item.loss.includes('won') ? '' : 'border border-[#F0F6EF]'}`}>
                     <div className='flex items-center gap-2'>
                         <img src={item.img} alt="fishgreen" />
                         <div>
@@ -92,7 +125,7 @@ const All = () => {
                                 </p>
                             </div>
                         </div>
-                        <button className={`border rounded-[6px] bg-[#DCFCE7] max-w-[100px] w-full shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] duration-300 flex items-center justify-between border-solid p-[9.5px_16px] border-[#052E16] ${items.opacity} ${items.cursor}`}>
+                        <button onClick={() => openModal('Bonk Button Content', items.cursor)} className={`border rounded-[6px] bg-[#DCFCE7] max-w-[100px] w-full shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] duration-300 flex items-center justify-between border-solid p-[9.5px_16px] border-[#052E16] ${items.opacity} ${items.cursor}`}>
                             <img src={items.img} alt="shield" />
                             <span className='font-normal text-xs leading-[14.52px] tracking-[1%] text-black'>{items.text}</span>
                         </button>
@@ -103,34 +136,46 @@ const All = () => {
     );
 
     return (
-        <div className='max-w-[361px] bg-[#DCFCE7] mx-auto pt-[22px]'>
-            <div className={`flex items-center justify-center py-1 gap-1 px-4 bg-[#F0FDF4] rounded max-w-[183px] mx-auto mb-[22px] ${activeTab === 'all' ? ' max-w-[183px]' : ' max-w-[139px]'} `}>
-                <img src={dataIcon} alt="timeIcon" />
-                <p className='block text-xs font-bold text-[#052E16] leading-[14px]'>
-                    {activeTab === 'all' ? '25m 12s' : 'Ready'}
-                    <span className='font-normal'>{activeTab === 'all' ? ' to next battle' : ' to battle'}</span>
-                </p>
-            </div>
+        <div className='max-w-[361px] bg-[#DCFCE7] mx-auto pt-[22px] relative'>
             <div className='flex items-center gap-2 justify-center'>
                 <button
                     onClick={() => setActiveTab('all')}
-                    className={`max-w-[98px] w-full rounded-[4px] max-h-[98px] py-2 flex justify-center font-normal text-base leading-4 border-[1px] border-solid ${activeTab === 'all' ? 'border-[#166534] text-[#052E16] bg-[#F0FDF4] shadow-[2px_2px_0px_0px_#0C0A0980_inset]' : 'bg-[#DCFCE7] opacity-50 text-[#052E16] border-[#052E1633] shadow-[1px_1px_0px_0px_#052E1633]'}`}
+                    className={`max-w-[98px] w-full rounded-[4px] max-h-[98px] py-2 flex justify-center font-normal text-base leading-4 border-[1px] border-solid ${activeTab === 'all' ? 'border-[#166534] text-[#052E16] bg-[#F0FDF4] shadow-[2px_2px_0px_0px_#0C0A0980_inset]' : 'border-[#F0FDF4] bg-[#DCFCE7] text-[#052E16]'}`}
                 >
                     All
                 </button>
                 <button
                     onClick={() => setActiveTab('leaderboard')}
-                    className={`w-full rounded-[4px] py-2 flex max-h-[98px] justify-center font-normal text-base leading-4 border-[1px] border-solid max-w-[109px] ${activeTab === 'leaderboard' ? 'border-[#166534] text-[#052E16] bg-[#F0FDF4] shadow-[2px_2px_0px_0px_#0C0A0980_inset]' : 'bg-[#DCFCE7] opacity-50 text-[#052E16] border-[#052E1633] shadow-[1px_1px_0px_0px_#052E1633]'}`}
+                    className={`max-w-[98px] w-full rounded-[4px] max-h-[98px] py-2 flex justify-center font-normal text-base leading-4 border-[1px] border-solid ${activeTab === 'leaderboard' ? 'border-[#166534] text-[#052E16] bg-[#F0FDF4] shadow-[2px_2px_0px_0px_#0C0A0980_inset]' : 'border-[#F0FDF4] bg-[#DCFCE7] text-[#052E16]'}`}
                 >
                     Leaderboard
                 </button>
             </div>
-            <div className='mt-4'>
-                {activeTab === 'all' ? renderAllContent() : renderLeaderboardContent()}
+            <div className='flex justify-center'>
+                <img src={dataIcon} alt='timer' className='mb-[19px]' />
             </div>
+            {activeTab === 'all' ? renderAllContent() : renderLeaderboardContent()}
+            {isModalOpen && (
+                <div className='fixed inset-0 flex items-center justify-center z-50'>
+                    <div className='absolute inset-0 bg-black opacity-50'></div>
+                    <div className='bg-white p-4 rounded-lg z-10'>
+                        <p className='font-bold'>{modalContent}</p>
+                        <button onClick={closeModal} className='mt-2 px-4 py-2 bg-[#DCFCE7] rounded'>Close</button>
+                    </div>
+                </div>
+            )}
+            {isSecondModalOpen && (
+                <div className='fixed inset-0 flex items-center justify-center z-50'>
+                    <div className='absolute inset-0 bg-black opacity-50'></div>
+                    <div className='bg-white p-4 rounded-lg z-10'>
+                        <img src={Cartoon} alt="Cartoon" className='w-full' />
+                        <p className='font-bold'>This is the second modal content</p>
+                        <button onClick={closeSecondModal} className='mt-2 px-4 py-2 bg-[#DCFCE7] rounded'>Close</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
 
 export default All;
-
