@@ -147,7 +147,7 @@ const All = () => {
             </div>
 
             {isModalOpen && (
-                <div className='fixed inset-0 backdrop-blur-[17.7px] flex items-center justify-center z-50 left-0 top-0'>
+                <div className='fixed inset-0 bg-[#9ED2AECC] max-w-[393px] mx-auto flex items-center justify-center z-50 left-0 top-0'>
                     <div className='bg-[#DCFCE7] rounded-[16px] p-2 max-w-[361px] w-full mx-auto overflow-hidden'>
                         <div className='max-w-[344px] rounded-lg p-4 bg-[#F0FDF4]'>
                             <div className=' flex items-center gap-2 mb-4'>
@@ -176,7 +176,7 @@ const All = () => {
             )}
 
             {isSecondModalOpen && (
-                <div className='fixed inset-0 backdrop-blur-[17.7px] flex items-center justify-center z-50'>
+                <div className='fixed inset-0 bg-[#9ED2AECC] flex items-center justify-center z-50 max-w-[393px] mx-auto'>
                     <div className='bg-[#DCFCE7] rounded-[16px] p-2 max-w-[361px] w-full mx-auto overflow-hidden'>
                         <div className='max-w-[344px] rounded-lg p-4 bg-[#F0FDF4]'>
                             <p className=' font-bold text-base leading-5 text-[#052E16]'>Rules</p>
