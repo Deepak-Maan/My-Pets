@@ -14,9 +14,9 @@ import Time from "../../assets/svg/time.svg";
 // navData
 export const Colors = [
     { code: '#36985', label: 'Color 1' },
-    { code: '#FF5733', label: 'Color 2' },
-    { code: '#33FF57', label: 'Color 3' },
-    { code: '#3357FF', label: 'Color 4' }
+    { code: '#FF573', label: 'Color 2' },
+    { code: '#33FF5', label: 'Color 3' },
+    { code: '#3357F', label: 'Color 4' }
 ];
 
 // footer data
@@ -153,49 +153,37 @@ export const leaderboardData = [
         id: 4,
         img: Shield,
         text: "Sheild",
-        opacity: 'opacity-[1]',
-                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
-
+        opacity: 'opacity-[1]'
     },
     {
         id: 5,
         img: Shield,
         text: "Sheild",
-        opacity: 'opacity-[1]',
-                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
-
+        opacity: 'opacity-[1]'
     },
     {
         id: 6,
         img: Shield,
         text: "Sheild",
-        opacity: 'opacity-[1]',
-                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
-
+        opacity: 'opacity-[1]'
     },
     {
         id: 7,
         img: Bonk,
         text: "Bonk",
-        opacity: 'opacity-[1]',
-                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
-
+        opacity: 'opacity-[1]'
     },
     {
         id: 8,
         img: Bonk,
         text: "Bonk",
-        opacity: 'opacity-[1]',
-                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
-
+        opacity: 'opacity-[1]'
     },
     {
         id: 9,
         img: Bonk,
         text: "Bonk",
-        opacity: 'opacity-[1]',
-                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
-
+        opacity: 'opacity-[1]'
     },
     {
         id: 10,
@@ -208,8 +196,6 @@ export const leaderboardData = [
         id: 11,
         img: Bonk,
         text: "Bonk",
-        opacity: 'opacity-[1]',
-                shadow: 'shadow-[1px_1px_0px_0px_#16653480] hover:shadow-[0px_1px_0px_1px_#16653480] hover:border-[#16653480] '
-
+        opacity: 'opacity-[1]'
     },
 ]
